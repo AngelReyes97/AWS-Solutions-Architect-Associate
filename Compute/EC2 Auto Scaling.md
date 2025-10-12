@@ -51,11 +51,11 @@ This ensures your “bus service” **runs efficiently**, accommodates all passe
 
 ## Scaling Methods: 🚀  
 
-1. 🛠️ **Manual Scaling:** involves manually adjusting the number of instances within an auto scaling group to prepare for anticipated changes in demand. 
-        - 📈 Ideal for scenarios where a **large spike in traffic is expected**, such as **major marketing campaigns**, **holiday sales**, or **product launches**.  
-        - 🧠 The main advantage is the ability to **proactively manage resources** before demand increases, helping to **reduce potential downtime** and ensure a **smooth user experience**.  
-        - 🔧 Provides **flexibility** to modify **desired**, **minimum**, and **maximum** instance counts to match **anticipated workloads**.  
-        - ⏳ However, it is **not a sustainable long-term solution**, as it requires **constant monitoring and manual intervention** to maintain optimal performance.
+1. 🛠️ **Manual Scaling:** involves manually adjusting the number of instances within an auto scaling group to prepare for anticipated changes in demand.  
+    - 📈 Ideal for scenarios where a **large spike in traffic is expected**, such as **major marketing campaigns**, **holiday sales**, or **product launches**.  
+    - 🧠 The main advantage is the ability to **proactively manage resources** before demand increases, helping to **reduce potential downtime** and ensure a **smooth user experience**.  
+    - 🔧 Provides **flexibility** to modify **desired**, **minimum**, and **maximum** instance counts to match **anticipated workloads**.  
+    - ⏳ However, it is **not a sustainable long-term solution**, as it requires **constant monitoring and manual intervention** to maintain optimal performance.
 
 --- 
 
@@ -88,11 +88,11 @@ Both approaches ensure a **smooth, efficient ride**, just like **dynamic scaling
 
 ---
 
-4. 📈 **Predictive Scaling:** is a **proactive approach** to managing system load by **anticipating demand** and scaling resources accordingly. Uses **machine learning** and **historical data** to allow the system to **forecast when demand will increase or decrease**. This method is particularly effective for **cyclical workloads**, such as business hours, recurring traffic spikes, or scheduled batch processing.
-        - 📊 Requires at least **24 hours of historical data**, which can be sourced from **Amazon CloudWatch metrics**, and can analyze up to **14 days** of past data.  
-        - ⚙️ Can operate in **forecast-only mode** (showing predictions without scaling) or **forecast-and-scale mode**, where it automatically adjusts resources based on predictions.  
-        - 🕐 Scaling actions typically occur **at the start of each hour**, meaning it’s **not fully real-time**, but ensures readiness before demand peaks.  
-        - 🔁 Can be **combined with dynamic scaling** for greater responsiveness and precision, though this may slightly **increase cost**.  
+4. 📈 **Predictive Scaling:** is a **proactive approach** to managing system load by **anticipating demand** and scaling resources accordingly. Uses **machine learning** and **historical data** to allow the system to **forecast when demand will increase or decrease**. This method is particularly effective for **cyclical workloads**, such as business hours, recurring traffic spikes, or scheduled batch processing.  
+     - 📊 Requires at least **24 hours of historical data**, which can be sourced from **Amazon CloudWatch metrics**, and can analyze up to **14 days** of past data.  
+     - ⚙️ Can operate in **forecast-only mode** (showing predictions without scaling) or **forecast-and-scale mode**, where it automatically adjusts resources based on predictions.  
+     - 🕐 Scaling actions typically occur **at the start of each hour**, meaning it’s **not fully real-time**, but ensures readiness before demand peaks.  
+     - 🔁 Can be **combined with dynamic scaling** for greater responsiveness and precision, though this may slightly **increase cost**.  
 
 ##### 🍽️ Analogy: Predictive Scaling as a Smart Kitchen  
 Imagine you're **hosting a large dinner party** and want to make sure there’s **always enough food** for everyone throughout the evening:  
