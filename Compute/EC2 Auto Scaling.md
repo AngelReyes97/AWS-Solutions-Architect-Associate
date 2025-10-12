@@ -57,7 +57,11 @@ This ensures your “bus service” **runs efficiently**, accommodates all passe
     - Allows for **flexibility** in adjusting the desired, **maximum**, and **minimum** number of instances to match anticipated demand.
     - Manual scaling is **not a sustainable long-term solution** as it requires constant monitoring and adjustments.
 
+--- 
+
 2. ⏰ **Scheduled Scaling:** Add or remove instances at **predetermined times**, optimizing costs during off-peak hours.
+
+---
 
 3. 📊 **Dynamic Scaling:** Core of Auto Scaling, **automatically adjusts instances based on demand**.  
     - **Two Types of Auto Scaling:**
@@ -71,15 +75,11 @@ This ensures your “bus service” **runs efficiently**, accommodates all passe
   Imagine you're in a car on a long road trip. **Step scaling** is like manually adjusting your speed based on road signs and conditions — you accelerate when climbing a hill and slow down when approaching a sharp turn, responding to specific triggers along the way.  
   **Target tracking**, on the other hand, is like setting your car's **cruise control** to maintain a constant speed (e.g., 60 mph). The car automatically adjusts the throttle to keep your speed steady, whether you're going uphill, downhill, or on flat terrain.  
   In cloud terms, **step scaling** requires you to define the exact rules for scaling up or down (manual adjustments), while **target tracking** automatically manages resources to maintain a desired performance level (cruise control).
-    
-- 🤖 **Predictive Scaling:** Uses **machine learning** and **historical data** to anticipate demand and adjust resources proactively.  
+
+---
+
+4. 🤖 **Predictive Scaling:** Uses **machine learning** and **historical data** to anticipate demand and adjust resources proactively.  
 
 **Considerations:** ⚠️  
 - Requires **careful configuration** to ensure **optimal performance** and **cost efficiency**.  
 - Choosing the **right scaling policy** and monitoring **metrics** is critical for success.
-
----
-
-**Considerations:** ⚠️  
-- Requires **careful configuration** to ensure **optimal performance** and **cost efficiency**.  
-- Choosing the **right scaling policy** and monitoring **metrics** is critical for success. 
