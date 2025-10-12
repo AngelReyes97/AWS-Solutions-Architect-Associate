@@ -165,3 +165,94 @@ In contrast, using **Fargate** would be like **hiring a fully equipped, managed 
 You don’t worry about the equipment; you focus solely on preparing the best meals.  
 
 The **ECS EC2 launch type** offers **flexibility and control** to customize your application's environment, but comes with the **responsibility of managing and scaling the underlying infrastructure**.
+
+---
+
+## 🗄️ Amazon ECR (Elastic Container Registry)
+
+### 🧩 Definition
+**Amazon Elastic Container Registry (ECR)** is a **fully managed AWS service** that provides a **secure location to store and manage Docker images**, facilitating their **distribution and deployment** across applications.  
+
+- ECR is closely linked with **Amazon ECS** and does **not require users to provision infrastructure**, as AWS manages it.  
+- Developers primarily use ECR to **push, pull, and manage Docker images (like a private DockerHub)** in a **centralized and secure environment**.  
+
+---
+
+### ⚙️ Key Components
+- **Registry:** Hosts and stores Docker images as well create image repositories; each AWS account comes with a **default registry**. 
+    - read/write access by default to any images you create within the registry/repositories.
+    - Before Docker client can access your registry, needs authenticatation as an AWS user via an Authorization Token.
+- **Authorization Token:** Used to authenticate the Docker client with ECR; valid for **12 hours**. Re-authentication is required afterward.
+    - You can run the **get-in** command using the AWS ClI.
+- **Repository:** Organizes Docker images within the registry; access is controlled via **IAM and repository policies**.  
+- **Repository Policy:** Defines permissions for who can push or pull images.  
+- **Image:** The actual Docker image stored in the repository.  
+
+**Usage:**
+- **Push images:** `docker push`  
+- **Pull images:** `docker pull`  
+- Access and security are managed through **IAM policies** and **repository policies**.
+
+---
+
+### 🔒 Analogy: ECR as a Secure Photo Album
+Imagine **ECR** as a **giant, secure photo album in the cloud**, but instead of storing family photos, you store and manage your **Docker images**.  
+
+- Just like a photo album allows you to **organize photos into different sections**, ECR lets you **create repositories** to organize Docker images.  
+- You have the **key** to this album, and you can decide **who else gets a copy of the key** to view or add images to the album.  
+- The album is **fully managed by AWS**, meaning you don’t have to worry about the space it takes up or maintaining the album itself; **AWS handles all of that** for you.
+
+This setup ensures your Docker images are **secure, organized, and easily deployable** across your application.
+
+---
+
+## Amazon Elastic Kubernetes Service (EKS) 🚀
+
+### 🧩 Definition
+**Amazon Elastic Kubernetes Service (EKS)** is a **managed service** that allows users to run **Kubernetes** on AWS infrastructure **without managing the Kubernetes control plane**. AWS handles the **provisioning, scaling, and management of the control plane**, while users are responsible for managing the **worker nodes**.
+
+**Kubernetes Basics:** 🐳
+- Kubernetes is an **open-source container orchestration tool** that automates the **deployment, scaling, and operation** of containerized applications.
+- It is **container-runtime agnostic**, supporting both Docker and Rocket containers.
+
+**Control Plane:** ⚙️
+- Consists of components including **APIs, kubelet processes, and the Kubernetes Master**.
+- Manages communication within the cluster.
+- **Schedules containers onto nodes** based on compute requirements and monitors the state of Kubernetes objects.
+
+**Worker Nodes:** 🖥️
+- These are the machines that run **containerized applications**.
+- In EKS, worker nodes are **EC2 instances** that include necessary software like **Docker, kubelet, and AWS IAM authenticator** for security.
+- Users manage these nodes and connect them to the EKS cluster.
+
+---
+
+### Setting Up EKS 🛠️
+1. Create an **IAM service role** with specific permissions for EKS.
+2. Use **AWS CloudFormation** to create a **VPC** for the EKS cluster.
+3. Install **kubectl** and **AWS-IAM-Authenticator** for cluster management.
+4. Create and configure the **EKS cluster** using the AWS console.
+5. Launch and configure **worker nodes** to join the EKS cluster.
+
+**Deployment:** 📦
+- Once the EKS cluster and worker nodes are configured, users can **deploy applications using Kubernetes**.
+
+---
+
+### 🚜 Analogy: EKS as a Large, Automated Farm
+
+Imagine **EKS (Elastic Kubernetes Service for Kubernetes)** as a **large, automated farm**:  
+
+- **Plots of land** = worker nodes, where you can plant different types of crops (containerized applications).  
+- **Crops** = the applications themselves, each with specific needs for sunlight, water, and nutrients (resources, CPU, memory).  
+- **EKS (farm manager)** is the experienced caretaker who handles all the complex tasks:  
+  - **Water supply** 💧 = scheduling and deploying containers to the right nodes at the right time.  
+  - **Pest control** 🐞 = ensuring security, preventing unauthorized access, and protecting applications from failures.  
+  - **Sunlight distribution** ☀️ = managing resources efficiently so each application gets what it needs to thrive.  
+  - **Soil quality & maintenance** 🌱 = monitoring node health, scaling worker nodes, and keeping the cluster running smoothly.  
+
+- **You (the farmer / AWS account owner)** only need to:  
+  - **Prepare the land** 🏞️ = provision and configure worker nodes.  
+  - **Decide what crops to grow** 🌾 = deploy the applications you want running on the cluster.  
+
+EKS takes care of all the intricate details behind the scenes, making sure your “farm” is **productive, efficient, and resilient**, allowing your applications to **thrive without constant manual intervention**.

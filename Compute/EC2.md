@@ -212,3 +212,4 @@ Imagine **EBS (Amazon Elastic Block Store)** as a bookshelf in your house that i
 - **Purchasing options** (On-Demand, Reserved, Spot) help control cost 💰  
 - **Security Groups** and **Key Pairs** keep your instances safe 🔒  
 - Used for **websites, databases, and app hosting** 🚀
+ 
