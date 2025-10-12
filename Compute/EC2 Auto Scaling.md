@@ -76,7 +76,7 @@ This ensures your “bus service” **runs efficiently**, accommodates all passe
      - 🧩 Overall, scheduled scaling helps in **reducing costs** by efficiently **managing when resources are active** based on **time schedules**.
 
 
-##### ☕ Analogy: Scheduled Scaling as a Coffee Shop Schedule  
+#### ☕ Analogy: Scheduled Scaling as a Coffee Shop Schedule  
 Imagine you **own a coffee shop** that's **busiest during the morning rush** and again **in the late afternoon**.  
 
 - 🌅 You **schedule more staff** during these **peak hours** to handle the rush.  
@@ -100,7 +100,7 @@ This ensures you’re **not paying for unused resources**, while still having **
     - **Importance:** Crucial for maintaining **performance and cost-efficiency** in **elastic and fault-tolerant architectures**.
 
 
-##### 🚗 Analogy: Step Scaling vs. Target Tracking as Driving Styles  
+#### 🚗 Analogy: Step Scaling vs. Target Tracking as Driving Styles  
 Imagine you're **on a long road trip**:  
 
 - 🛣️ **Step Scaling** → like **manually adjusting your speed** based on road signs and conditions.  
@@ -128,7 +128,7 @@ Both approaches ensure a **smooth, efficient ride**, just like **dynamic scaling
      - 🔁 Can be **combined with dynamic scaling** for greater responsiveness and precision, though this may slightly **increase cost**.  
 
 
-##### 🍽️ Analogy: Predictive Scaling as a Smart Kitchen  
+#### 🍽️ Analogy: Predictive Scaling as a Smart Kitchen  
 Imagine you're **hosting a large dinner party** and want to make sure there’s **always enough food** for everyone throughout the evening:  
 
 - 🧠 Your **smart kitchen** studies **previous parties**, learning **when guests get hungry** and **how much they usually eat**.  
