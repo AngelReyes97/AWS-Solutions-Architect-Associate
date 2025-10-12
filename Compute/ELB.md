@@ -21,11 +21,11 @@
 Define how **inbound connections** are routed based on **ports and protocols**.  
 
 **Key Points:**  
-- Each ELB must have **at least one listener** configured, operating based on **specified ports and protocols**.  
-- Listeners can contain **multiple rules**, each with **conditions and actions**, to determine how requests are routed to **different target groups**.  
-- Configuration varies depending on the **ELB type** (**ALB**, **NLB**, or **Classic**).  
-- Support **advanced features** like **TLS termination**, allowing listeners to handle **encrypted traffic** with server certificates.  
-- Ensure **efficient traffic distribution**, routing requests to the **appropriate resources** based on defined **rules and conditions**.
+  - Each ELB must have **at least one listener** configured, operating based on **specified ports and protocols**. 
+  - 🔄 Listeners can contain **multiple rules**, each with **conditions and actions**, to determine how requests are routed to **different target groups**.  
+  - ⚙️ Configuration varies depending on the **ELB type** (**ALB**, **NLB**, or **Classic**).  
+  - 🔐 Support **advanced features** like **TLS termination**, allowing listeners to handle **encrypted traffic** with server certificates.  
+  - 🚦 Ensure **efficient traffic distribution**, routing requests to the **appropriate resources** based on defined **rules and conditions**.
 
 ---
 
