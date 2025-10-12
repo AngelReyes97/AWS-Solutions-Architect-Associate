@@ -108,7 +108,7 @@ Imagine you're the **manager of a large, busy restaurant** with multiple **chefs
 
 - 🍽️ The **restaurant** represents your **application**, and the **orders** are the **requests** from **users**.  
 - 🧑‍🍳 Your job as the manager is to ensure that **orders are distributed evenly among chefs**, so no single chef is overwhelmed.  
-- ⚡ The **NLB acts like you**, taking incoming orders and **intelligently assigning them** to the chefs who are **less busy or best equipped** to handle the order.  
+- ⚡ The **NLB acts like you** (manager), taking incoming orders (requests) and **intelligently assigning them** to the chefs (servers) who are **less busy or best equipped** to handle the order.  
 - 🔄 This ensures the **kitchen operates smoothly**, orders are **processed quickly**, and customers receive their **food (data)** without unnecessary delay.  
 - 🚀 NLB is especially effective for handling **very high volumes of requests**, making it ideal for applications experiencing **sudden traffic surges**.  
 
