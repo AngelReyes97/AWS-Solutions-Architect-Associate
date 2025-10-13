@@ -197,6 +197,17 @@ Imagine **EBS (Amazon Elastic Block Store)** as a bookshelf in your house that i
 
 ---
 
+## User Data
+- User data allows you to run commands during the first boot cycle of your new instance.
+- Useful to install software from a repository or perform OS updates.
+
+---
+
+## Meta Data
+- Used to gather and query instance data that is running, such as the hostname, events, and security groups, and etc.
+
+---
+
 ## 💡 Common Use Cases
 - Hosting **websites** 🌐  
 - Running **databases** 💾  
