@@ -175,7 +175,7 @@ FSx for OpenZFS is part of the broader **Amazon FSx offerings**, alongside:
 
 ---
 
-## ⚙️ Features and Capabilities  
+### ⚙️ Features and Capabilities  
 
 - 🏗️ **Multi-AZ deployments** for high availability and fault tolerance.  
 - 📸 **Instant, point-in-time snapshots** for rapid data recovery.  
