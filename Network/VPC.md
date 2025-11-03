@@ -69,7 +69,7 @@ They can be classified as **public** or **private**, depending on their configur
 
 ---
 
-![subnet](image.png)
+![subnet](subnets.png)
 
 ---
 
