@@ -71,4 +71,4 @@ Understanding the **features, configurations, and use cases** for each service i
 - ⚙️ Review **hybrid storage solutions** (Storage Gateway, DataSync) and their components.  
 - 📊 Focus on **durability, availability, performance modes, and encryption options** for each service.  
 
----
+--- 
