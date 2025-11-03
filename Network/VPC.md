@@ -100,3 +100,17 @@ This setup ensures a **balance of accessibility and security**, just like how su
 - ⚡ **High Availability** – Deploy subnets across multiple **Availability Zones** for redundancy.  
 
 ---
+
+## 🧩 Reserved IP Addresses in a Subnet  
+
+In each subnet, **certain IP addresses are reserved** and **cannot be assigned** to host resources. Specifically, **the first four IP addresses** and **the last IP address** in any subnet are reserved for AWS networking purposes.  
+
+| IP Address | Purpose | Usable for Hosts? |
+|-------------|----------|------------------|
+| 1st | **Network Address** – identifies the subnet itself | ❌ |
+| 2nd | **AWS Routing** – reserved by AWS for internal routing | ❌ |
+| 3rd | **DNS** – reserved for Amazon DNS server | ❌ |
+| 4th | **Future Use** – reserved by AWS | ❌ |
+| Last | **Broadcast Address** – reserved for broadcast traffic | ❌ |
+
+As a result, in a **/24 CIDR block**, which provides **256 IP addresses**, only **251 are available** for host resources.  
