@@ -106,13 +106,33 @@ This private link minimizes latency, improves bandwidth performance, and enhance
 
 ---
 
-## 🏗️ Connection Architecture  
+## 🏗️ Architecture Components  
 
-An AWS Direct Connect setup typically involves three main components. The connection involves a middle entity, typically an AWS partner or customer, that manages the Direct Connect infrastructure:
+### 🏢 On-Premise Data Center  
+- Contains a **router** that connects to the **Direct Connect location**.  
+- This router initiates the private network connection to AWS.  
 
-1. **Customer Router (On-Premises)** – Located within your organization’s data center.  
-2. **AWS Router (Direct Connect Location)** – Managed by AWS in a specialized facility separate from your data center.  
-3. **Connection Partner (Carrier or AWS Partner Network)** – Provides the physical connectivity between your data center and AWS’s Direct Connect location.  
+### 🏬 Direct Connect Location  
+- Acts as an **intermediary** between the **on-premise data center** and **AWS infrastructure**.  
+- Managed by an **AWS partner** or **customer**.  
+- Composed of two main parts:  
+  - **Customer/Partner Infrastructure:** The customer or partner’s networking hardware.  
+  - **AWS-Managed Infrastructure:** The AWS router and networking equipment within the Direct Connect facility.  
+
+### ☁️ AWS Infrastructure  
+- Represents the **AWS Region** and **VPCs**.  
+- The Direct Connect link terminates in an AWS region, enabling access to both **public** (e.g., Amazon S3) and **private** (e.g., EC2, RDS) resources.  
+
+---
+
+## 🔗 Connection Path  
+
+1. The connection begins at the **on-premise router** within your data center.  
+2. It travels to the **customer side** of the **Direct Connect location**.  
+3. A **cross-connect** links the **customer’s router** to the **AWS router** inside the Direct Connect facility.  
+4. From the AWS router, the connection extends into the **AWS region**, granting access to services such as **Amazon S3**, **EC2**, and other AWS resources.  
+
+---
 
 🧩 **Flow Overview:**  
 Your on-premises router connects to the **AWS router** in a **Direct Connect location** via a **dedicated fiber link**, bypassing the internet entirely.  
@@ -120,8 +140,6 @@ Your on-premises router connects to the **AWS router** in a **Direct Connect loc
 ---
 
 ![DC](DC.png)
-
-**Connects to an AWS Region**
 
 ---
 
