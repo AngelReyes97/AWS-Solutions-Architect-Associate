@@ -148,4 +148,8 @@ DynamoDB requires **data modeling knowledge** and an understanding of key concep
 - Understanding **partition and sort keys** is critical for data modeling.  
 - **Provisioned throughput**: predictable performance for steady workloads; can benefit from reserved capacity discounts.  
 - **On-demand throughput**: best for unpredictable traffic patterns; pay only for what you use.  
-- Effective data modeling ensures **fast queries and scalable performance**.  
+- Effective data modeling ensures **fast queries and scalable performance**. 
+
+---
+
+![alt text](DynamoDB.png)

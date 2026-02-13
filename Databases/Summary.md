@@ -6,7 +6,7 @@ The AWS Solutions Architect Associate exam heavily tests your understanding of:
 
 - 🏢 Amazon RDS  
 - ⚡ Amazon DynamoDB  
-- 🚀 Amazon ElastiCache  
+- 🚀 Amazon ElastiCache 
 
 You should understand their **core differences, performance characteristics, and ideal use cases**.
 

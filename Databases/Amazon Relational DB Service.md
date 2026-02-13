@@ -13,6 +13,10 @@
 
 ---
 
+![alt text](RDS.png)
+
+---
+
 ## 🧩 Analogy: RDS as a Fully Equipped Kitchen  
 
 Imagine you’re opening a **restaurant** and need a **kitchen** to prepare your meals.  
@@ -34,4 +38,10 @@ Imagine you’re opening a **restaurant** and need a **kitchen** to prepare your
 - 🔁 **Automated Backups & Snapshots** – Simplifies recovery and ensures data durability.  
 - ⚙️ **Storage Autoscaling** – Dynamically adjusts storage capacity based on usage.  
 - 💡 **Performance Optimization** – Memory-optimized instance types for high-performance workloads.  
-- 🧠 **Hands-On Learning** – Encourages practical experience through AWS labs and exercises.  
+- 🧠 **Hands-On Learning** – Encourages practical experience through AWS labs and exercises.
+
+---
+
+## Amazon Aurora
+
+![alt text](Aurora.png)
