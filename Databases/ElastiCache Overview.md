@@ -113,3 +113,7 @@ Imagine studying for an exam using a large textbook 📘. Each time you need an 
 
 ## 🧠 Analogy
 Imagine working in a large library filled with books 📚. Every time you need information, you walk through the aisles to find a book, which takes time. Now imagine keeping the books you use most often on a small shelf right next to your desk. Instead of walking across the library, you can reach over and grab them instantly. Amazon ElastiCache works the same way by keeping frequently accessed data in memory, allowing applications to retrieve it quickly instead of searching through slower, disk-based databases.
+
+---
+
+![alt text](ElastiCache.png)
