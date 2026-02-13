@@ -106,3 +106,5 @@ DynamoDB Accelerator (DAX) is like a special express desk placed right at the en
 - 🧱 Runs as a **multi-node cluster** inside a VPC
 - 🔐 Fully managed and secure with KMS encryption
 - 🧪 High-yield topic for the AWS SAA exam
+
+---
