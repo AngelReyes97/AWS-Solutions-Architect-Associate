@@ -60,7 +60,7 @@ Unlike message queues, SNS uses a **push-based delivery model**, where messages 
     - Store the message payload in **Amazon S3**.
     - Send a reference to the stored object through the SNS topic.
 
---
+---
 
 ## 🪣 Handling Large Messages with Amazon S3  
 
@@ -161,6 +161,18 @@ Think of a DLQ as a **holding area for messages that failed**, allowing develope
 
 ---
 
+## ⚖️ SNS vs SQS  
+
+| Feature | SNS | SQS |
+|---|---|---|
+| Message Model | Publish/Subscribe | Message Queue |
+| Delivery Method | Push-based | Polling-based |
+| Message Storage | Does not store messages | Stores messages until processed |
+| Communication Pattern | One-to-many | One-to-one |
+| Main Purpose | Real-time notifications | Decoupled asynchronous processing |
+
+---
+
 ## 🔀 SNS and SQS Fan-Out Architecture  
 
 SNS and SQS can be combined to create a **fan-out messaging architecture**.
@@ -173,18 +185,6 @@ Benefits:
 - ⚡ Enables scalable message processing.
 - 🧩 Allows multiple applications to consume the same message.
 - 🔒 Provides reliable asynchronous communication.
-
----
-
-## ⚖️ SNS vs SQS  
-
-| Feature | SNS | SQS |
-|---|---|---|
-| Message Model | Publish/Subscribe | Message Queue |
-| Delivery Method | Push-based | Polling-based |
-| Message Storage | Does not store messages | Stores messages until processed |
-| Communication Pattern | One-to-many | One-to-one |
-| Main Purpose | Real-time notifications | Decoupled asynchronous processing |
 
 ---
 
