@@ -231,3 +231,11 @@ A publisher sends messages with a priority attribute:
 This way, subscribers only get the messages that match their interests.
 
 ---
+
+## Analogy
+Imagine you have a group of friends who all want to hear your latest news. Instead of calling each friend individually, you create a group chat. Whenever you post a message in the group chat, everyone in the group instantly receives it. In this analogy:
+
+You are the publisher.
+The group chat is the SNS topic.
+Your friends are the subscribers.
+You don’t store the messages in the group chat for later; once you send a message, it goes out to everyone at that moment, and you can’t take it back. Similarly, SNS sends notifications to all subscribers as soon as a message is published, without storing them for later retrieval.
