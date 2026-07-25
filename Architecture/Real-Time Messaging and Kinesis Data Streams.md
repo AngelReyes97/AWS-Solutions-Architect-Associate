@@ -54,6 +54,7 @@ Because of these limitations, systems requiring real-time processing need specia
   - Real-time dashboards.
   - Anomaly detection.
   - Dynamic pricing systems.
+  - On-Demand or Provisioned throughput.
 
 - 🔄 Maintains received data in the exact order it was received.
 
@@ -61,6 +62,8 @@ Because of these limitations, systems requiring real-time processing need specia
   - Read records.
   - Replay historical data.
   - Process the same stream independently.
+
+- 🧩 Can automatically encrypt Data.
 
 ---
 
@@ -112,7 +115,8 @@ Features:
 Each data record written to the Kinesis Data Stream contains:
 
 - 🔑 **Partition Key**
-  - Determines which shard receives the record.
+  - Used to group data in a shard in a stream.
+  - Defines the shard the record belongs to.
 
 - 🔢 **Sequence Number**
   - A unique identifier assigned to each record.
@@ -136,6 +140,7 @@ Each shard:
 - Shards store records in order, and each has a unique Shard ID and a non-overlapping hash key range.
 - Maintains the order of received records.
 - Allows consumers to process records in the correct order.
+- Merging and spliting shards allow to increase and decrease the number of shards as needed in a stream.
 
 ---
 
@@ -200,3 +205,377 @@ Similarly, **Amazon Kinesis Data Streams works like this high-speed conveyor bel
   - 📊 Real-time analytics.
 
 Kinesis Data Streams ensures important data reaches the right applications quickly, allowing organizations to make decisions without waiting for batch processing.
+
+---
+
+# 🛡️ Amazon Kinesis Data Firehose Overview  
+
+## 🧩 Definition  
+
+**Amazon Kinesis Data Firehose** is a fully managed service that collects, transforms, and loads large amounts of streaming data into various destinations.
+
+It simplifies the process of delivering streaming data by automatically handling the required infrastructure, storage, networking, and configuration.
+
+Supported destinations include:
+
+- 🪣 Amazon S3
+- 🗄️ Amazon DynamoDB
+- 📊 Amazon Redshift
+- Amazon EMR
+- Other supported data destinations
+
+---
+
+## 🏗️ Kinesis Data Firehose Architecture  
+
+Kinesis Data Firehose architecture is designed for **simplicity, automation, and fully managed data delivery**.
+
+Unlike **Kinesis Data Streams**, Firehose does **not use shards**. Instead, it automatically manages infrastructure, scaling, and configuration without requiring custom consumer applications.
+
+---
+
+## 🔄 Data Flow  
+
+1. 📤 **Data Producers**
+   - Data producers send streaming data to the Firehose delivery stream.
+   - Examples:
+     - Applications.
+     - Servers.
+     - Kinesis Agent.
+
+2. 🚚 **Kinesis Data Firehose Delivery Stream**
+   - Firehose receives incoming streaming data.
+   - Automatically manages:
+     - Infrastructure.
+     - Scaling.
+     - Configuration.
+
+3. 📦 **Data Buffering**
+   - Firehose temporarily stores incoming data.
+   - Data is buffered until:
+     - A specified buffer size is reached.
+     - A specified time interval is reached.
+
+4. ⚙️ **Data Processing**
+   - Before delivery, Firehose can:
+     - 🔄 Transform data.
+     - 🗜️ Compress data.
+     - 🔐 Encrypt data.
+
+5. 📥 **Destination Delivery**
+   - Firehose delivers processed data to configured destinations.
+
+---
+
+## ⚙️ Features and Use Cases  
+
+- 📥 **Collects Streaming Data**
+  - Receives large datasets from different sources.
+  - Delivers data continuously to configured destinations.
+
+- 🔄 **Transforms Data**
+  - Can process and transform data before loading it into the destination.
+
+- 📤 **Loads Data Automatically**
+  - Sends processed data to services such as:
+    - Amazon S3.
+    - Amazon DynamoDB.
+    - Amazon Redshift.
+
+- 🛠️ **Fully Managed Service**
+  - AWS manages:
+    - Infrastructure.
+    - Storage.
+    - Networking.
+    - Configuration.
+
+  - Users do not need to manage hardware or software.
+
+---
+
+## 🏗️ Automatic Scaling and Replication  
+
+Kinesis Data Firehose automatically:
+
+- 📈 Scales based on data volume.
+- 🔁 Replicates data across **three facilities within an AWS Region**.
+
+This provides reliability and availability without requiring manual infrastructure management.
+
+---
+
+## ⏳ Data Buffering  
+
+Kinesis Data Firehose does not immediately send every individual record to the destination.
+
+Instead, it uses buffering:
+
+- 📦 Data is collected until it reaches:
+  - A predefined buffer size.
+  - A predefined time interval.
+    - 60 to 900 seconds.
+
+- Buffer Size:
+    - S3 - 1MB to 128MB
+    - OpenSearch - 1MB to 100MB
+    - Lambda Functions - 0.2MB up to 3MB
+
+- 🚚 Once the buffer conditions are met:
+  - Firehose delivers the collected data to the destination.
+
+Buffer sizes and intervals vary depending on the destination service.
+
+---
+
+## 🕒 Destination Availability Handling  
+
+If a destination becomes unavailable:
+
+- 💾 Kinesis Firehose stores data for up to **24 hours**.
+- 🔄 After the destination becomes available, Firehose continues delivery.
+
+Exception:
+
+- When the source is a **Kinesis Data Stream**, data handling behavior differs.
+
+---
+
+## 🔄 Amazon Redshift Integration  
+
+When delivering data to **Amazon Redshift**:
+
+1. 📥 Data is first loaded into **Amazon S3**.
+    - No Shards are needed.
+    - Optionally back up transformed data to another S3 bucket.
+2. 🚚 Firehose then transfers the data from S3.
+3. 📊 Data is loaded into the Redshift cluster.
+
+---
+
+## 🔒 Data Compression and Encryption  
+
+Kinesis Data Firehose supports:
+
+- 🗜️ **Data Compression**
+  - Reduces storage requirements.
+
+- 🔐 **Data Encryption**
+  - Protects data during delivery.
+
+- 🪣 **Optional S3 Backup**
+  - Transformed data can optionally be backed up to another Amazon S3 bucket.
+
+---
+
+## ⚡ Performance and Pricing  
+
+### ⏱️ Latency
+
+- Kinesis Data Firehose operates with latency of:
+  - **60 seconds or more**
+
+This makes it suitable for data delivery and loading workloads rather than ultra-low-latency processing.
+
+---
+
+### 💰 Pricing
+
+- Charges are based on:
+  - The amount of data processed.
+
+---
+
+## 🖥️ Kinesis Agent  
+
+The **Kinesis Agent** is a Java application used to collect and send data to a Firehose delivery stream.
+
+Features:
+
+- ☕ Written as a Java application.
+- 🖥️ Can be installed on different operating systems.
+- 📤 Collects data and sends it to Kinesis Data Firehose.
+
+---
+
+## 🧠 Analogy: Kinesis Data Firehose as an Automated Delivery Service  
+
+Imagine **Kinesis Data Firehose as a highly efficient package delivery service**.
+
+- 📦 Instead of delivering every package immediately as soon as it arrives:
+  - The delivery service collects packages from multiple senders.
+  - Temporarily stores them in a warehouse.
+  - Delivers packages in batches to different destinations.
+
+- 🏭 The warehouse represents the **Firehose buffer**:
+  - Packages (data) are stored temporarily.
+  - Delivery happens when:
+    - 📏 The warehouse reaches a specified size.
+    - ⏱️ A specific amount of time has passed.
+
+---
+
+The delivery service automatically handles everything behind the scenes:
+
+- 🚚 Manages trucks, routes, and drivers.
+- 📈 Scales delivery capacity when more packages arrive.
+- 🔒 Ensures packages are delivered securely and reliably.
+
+---
+
+Similarly, **Amazon Kinesis Data Firehose**:
+
+- 📥 Collects streaming data from multiple sources.
+- 📦 Buffers data before delivery.
+- 🚚 Delivers data in batches to destinations such as:
+  - 🪣 Amazon S3.
+  - 📊 Amazon Redshift.
+  - 🔍 Amazon OpenSearch.
+
+- 🛠️ Automatically manages:
+  - Infrastructure.
+  - Scaling.
+  - Configuration.
+
+Kinesis Data Firehose allows organizations to deliver streaming data with minimal operational effort while ensuring data reaches the correct destination efficiently and securely.
+
+---
+
+# 🛡️ Amazon Kinesis Data Analytics Overview  
+
+## 🧩 Definition  
+
+**Amazon Kinesis Data Analytics** is a fully managed service that enables **real-time data analysis** using SQL on streaming data from:
+
+- 🌊 **Amazon Kinesis Data Streams**
+- 🚚 **Amazon Kinesis Data Firehose**
+
+It allows applications to continuously analyze incoming streaming data and generate real-time insights.
+
+---
+
+## ⚙️ Features and Use Cases  
+
+- 📊 **Real-Time Data Analysis**
+  - Uses SQL queries to analyze streaming data as it arrives.
+  - Enables users to process and understand data immediately.
+
+- 🔄 **Works with Kinesis Streaming Services**
+  - Can analyze data from:
+    - Kinesis Data Streams.
+    - Kinesis Data Firehose.
+
+- 📥 **Stores Processed Data**
+  - Processed results can be stored in:
+    - 🪣 Amazon S3.
+    - 🔍 Amazon OpenSearch clusters.
+    - 📊 Amazon Redshift clusters.
+
+- ⚡ **Real-Time Query Processing**
+  - Users can create applications that:
+    - Read streaming data.
+    - Process data using SQL.
+    - Generate output streams from real-time queries.
+
+---
+
+## 🛠️ Kinesis Data Analytics Applications  
+
+Users create **Kinesis Data Analytics applications** to process streaming data.
+
+Workflow:
+
+1. 📥 Application reads incoming streaming data.
+2. 🧮 SQL queries analyze and process the data.
+3. 📤 Results are sent to configured destinations or streaming services.
+
+---
+
+## 🧑‍💻 SQL Interactive Editor  
+
+Kinesis Data Analytics provides an interactive SQL editor that allows users to:
+
+- ✍️ Write SQL queries.
+- 🧪 Test queries using live streaming data.
+- 🔍 Validate data processing logic before deployment.
+
+This allows developers to quickly build and test real-time streaming applications.
+
+---
+
+## 🚀 Kinesis Data Analytics Studio  
+
+**Kinesis Data Analytics Studio** provides advanced analytical tools for building streaming applications quickly.
+
+Features:
+
+- ⚡ Helps create streaming applications faster.
+- 📊 Provides tools for advanced data analysis.
+- 🔄 Simplifies development of real-time analytics workflows.
+
+---
+
+## 🔄 Output Destinations  
+
+Kinesis Data Analytics can send processed results to:
+
+- 🚚 **Amazon Kinesis Data Firehose**
+  - Delivers processed streaming data to destinations.
+
+- ⚡ **AWS Lambda**
+  - Executes functions based on processed streaming results.
+
+- 🌊 **Amazon Kinesis Data Streams**
+  - Sends results back into another streaming workflow.
+
+---
+
+## 🧠 Analogy: Kinesis Data Analytics as a Smart Traffic Control Center  
+
+Imagine **Kinesis Data Analytics as a smart traffic control center for a busy city**.
+
+- 🏙️ The city's roads represent **data streams**.
+- 🚗 Thousands of cars traveling through the roads represent **data points** being generated every second.
+
+In a traditional system, it would be difficult to monitor all roads and react quickly to changes.
+
+---
+
+The smart traffic control center (**Kinesis Data Analytics**) continuously monitors traffic in real time:
+
+- 👀 Watches all roads as data flows through the system.
+- 🧮 Uses advanced tools (**SQL queries**) to analyze traffic patterns.
+- 🚨 Detects:
+  - Traffic congestion.
+  - Accidents.
+  - Unusual patterns.
+
+---
+
+Based on what it observes, the control center can immediately take action:
+
+- 📺 Update digital signs (**dashboards**) with current information.
+- 🚨 Send alerts when problems are detected.
+- 🔄 Reroute traffic by sending results to other services.
+
+---
+
+Similarly, **Amazon Kinesis Data Analytics**:
+
+- 🌊 Monitors streaming data in real time.
+- 🧮 Uses SQL queries to analyze incoming data.
+- 📊 Identifies patterns and generates insights.
+- 📤 Sends processed results to services such as:
+  - Amazon S3.
+  - Amazon Redshift.
+  - Amazon OpenSearch.
+  - AWS Lambda.
+  - Kinesis Data Streams.
+
+Like a modern traffic control center, Kinesis Data Analytics is:
+
+- ⚡ Real-time.
+- 🤖 Fully managed.
+- 📈 Automatically scalable.
+- 🛠️ Able to handle changing workloads without manual intervention.
+
+It helps applications make quick decisions and keep data processing workflows running smoothly.
