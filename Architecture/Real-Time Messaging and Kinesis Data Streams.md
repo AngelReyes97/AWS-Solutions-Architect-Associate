@@ -579,3 +579,171 @@ Like a modern traffic control center, Kinesis Data Analytics is:
 - 🛠️ Able to handle changing workloads without manual intervention.
 
 It helps applications make quick decisions and keep data processing workflows running smoothly.
+
+---
+
+# 🛡️ Amazon Kinesis Overview  
+
+## 🧩 Definition  
+
+**Amazon Kinesis** is a streaming data platform designed to simplify and reduce the cost of collecting, processing, and analyzing streaming data in AWS.
+
+It enables organizations to process data in:
+
+- ⚡ **Real-time**
+- ⏱️ **Near real-time**
+
+Kinesis allows applications to collect large amounts of streaming data and perform analysis or actions as the data is generated.
+
+![Kinesis](Kinesis.png)
+
+---
+
+## ⚙️ Amazon Kinesis Services  
+
+Amazon Kinesis consists of four main services:
+
+1. 🎥 **Kinesis Video Streams**
+2. 🌊 **Kinesis Data Streams**
+3. 🚚 **Kinesis Data Firehose**
+4. 📊 **Kinesis Data Analytics**
+
+Each service is designed for different streaming data requirements.
+
+---
+
+# 🎥 Amazon Kinesis Video Streams  
+
+## 🧩 Definition  
+
+**Kinesis Video Streams** is designed for streaming **binary-encoded data**, such as:
+
+- 🎥 Video.
+- 🔊 Audio.
+
+It enables applications to securely stream media data in real time.
+
+---
+
+## ⚙️ Features  
+
+- 📹 Handles media streaming workloads.
+- 🔄 Supports real-time video streaming.
+- 🌐 Supports **WebRTC** for real-time communication.
+
+Use cases:
+
+- Security cameras.
+- Video monitoring.
+- Real-time media applications.
+
+---
+
+# 🌊 Amazon Kinesis Data Streams  
+
+## 🧩 Definition  
+
+**Kinesis Data Streams** is a customizable streaming service designed for collecting and processing streaming data.
+
+It is commonly used for:
+
+- 📄 Text-encoded data.
+- Real-time event processing.
+- Custom streaming applications.
+
+---
+
+## ⚙️ Features  
+
+- 🛠️ Provides APIs and SDKs for application development.
+- 🔧 Allows developers to customize data processing workflows.
+- 📈 Requires manual scaling (no autoscaling).
+- Data records are immutable meaning they cannot be updated or deleted
+
+Compared to Firehose:
+
+- Kinesis Data Streams provides more control.
+- Users are responsible for managing scaling and application processing.
+
+---
+
+# 🚚 Amazon Kinesis Data Firehose  
+
+## 🧩 Definition  
+
+**Kinesis Data Firehose** is a fully managed service for delivering streaming data to destinations.
+
+It simplifies streaming data delivery by automatically managing infrastructure and scaling.
+
+---
+
+## ⚙️ Features  
+
+- 🛠️ Fully managed service.
+- 📈 Automatically scales based on data volume.
+- 🔄 Transforms data formats before delivery.
+- 📤 Delivers streaming data to supported destinations.
+- It is considered and a near real time data stream.
+
+Unlike Kinesis Data Streams:
+
+- ❌ Does not require manual scaling.
+- ❌ Does not require custom consumer applications.
+
+---
+
+# 📊 Amazon Kinesis Data Analytics  
+
+## 🧩 Definition  
+
+**Kinesis Data Analytics** enables real-time analysis of streaming data.
+
+It allows users to process streaming data using:
+
+- 🧮 SQL.
+- ⚙️ Apache Flink.
+
+---
+
+## ⚙️ Features  
+
+- ⚡ Performs real-time data analysis.
+- 🔄 Supports ETL (Extract, Transform, Load) processes.
+- 📈 Generates real-time metrics.
+
+Use cases:
+
+- Real-time dashboards.
+- Streaming analytics.
+- Event processing.
+
+---
+
+# 💰 Pricing Overview  
+
+Amazon Kinesis pricing varies depending on the service.
+
+Costs are based on:
+
+- 📦 Data volume processed.
+- 💾 Data storage.
+- ⚙️ Processing capacity.
+
+Pricing differs between Kinesis services depending on the resources used.
+
+⚠️ Amazon Kinesis does **not provide a free tier**.
+
+![alt text](pricing.png)
+
+---
+
+## ⚖️ Key Takeaways  
+
+- 🌊 Amazon Kinesis simplifies streaming data collection, processing, and analysis in AWS.
+- ⚡ Supports real-time and near real-time data workloads.
+- 🎥 Kinesis Video Streams handles binary media data such as audio and video.
+- 🌊 Kinesis Data Streams provides customizable real-time data processing with manual scaling.
+- 🚚 Kinesis Data Firehose provides fully managed streaming data delivery with automatic scaling.
+- 📊 Kinesis Data Analytics enables real-time analysis using SQL or Apache Flink.
+- 💰 Pricing depends on data volume, storage, and processing requirements.
+- ❌ Kinesis services do not include a free tier.
