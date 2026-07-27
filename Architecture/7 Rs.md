@@ -463,3 +463,261 @@ Products are organized into **portfolios**, which provide:
 - 🛠️ Creates a clear migration strategy and identifies preparation needs.  
 - ☁️ Enables successful application and data migration to AWS.  
 - 🚀 Supports modernization by selecting AWS services based on migration requirements.
+
+---
+
+## 📦 AWS DataSync
+
+**AWS DataSync** is a service that provides **secure and efficient data transfer** between on-premises environments and AWS storage services, as well as between AWS storage services.
+
+### Supported Storage
+
+AWS DataSync supports data stored on:
+
+- 🗂️ Network File Systems (NFS).
+- 📁 Server Message Block (SMB) shares.
+- 🪣 Self-managed object storage.
+- ☁️ Amazon S3.
+- 📂 Amazon Elastic File System (EFS).
+- 💾 Amazon FSx for Windows File Server.
+- 📦 AWS Snowcone.
+
+---
+
+### ⚙️ Key Features
+
+- 🌐 Uses **AWS VPC Endpoints** for high bandwidth and low latency.
+- ⚡ Uses a purpose-built data transfer protocol.
+- 🧵 Uses a parallel, multithreaded architecture.
+- 🚀 Supports transfer speeds of up to **10 Gbps**.
+- 🔄 Automates secure data transfers.
+
+---
+
+### 🔐 Security Features
+
+AWS DataSync provides:
+
+- 🔒 Encryption in transit using **TLS (Transport Layer Security)**.
+- 🛡️ Encryption at rest for AWS services.
+    - For EFS and FSx for Windows
+- ✅ Data validation to maintain data integrity during transfer.
+
+---
+
+## 📂 AWS Transfer Family
+
+The **AWS Transfer Family** is a fully managed service for securely transferring files into and out of AWS storage services.
+
+### Supported Protocols
+
+AWS Transfer Family supports:
+
+- 🔐 SFTP (Secure Shell File Transfer Protocol)
+- 🔒 FTPS (File Transfer Protocol Secure)
+- 📁 FTP (File Transfer protocol)
+- 📨 AS2 (Applicability Statement 2)
+
+---
+
+### Supported Storage
+
+Files can be transferred to and from:
+
+- 🪣 Amazon S3.
+- 📂 Amazon Elastic File System (EFS).
+
+---
+
+### Key Features
+
+- ☁️ Fully managed service.
+- 🌍 Operates across multiple Availability Zones.
+- 📈 Supports automatic scaling.
+- 🛠️ Eliminates the need to provision and manage transfer servers.
+
+---
+
+### 📋 Managed File Transfer Workflow (MFTW)
+
+The **Managed File Transfer Workflow** helps automate and manage file transfers.
+
+It supports pre-transfer processing actions such as:
+
+- 🏷️ Tagging files.
+- 🔒 Encrypting files.
+
+---
+
+### ⚙️ AWS Transfer Family Setup
+
+To use AWS Transfer Family:
+
+1. 🪣 Configure the destination storage.
+2. 🔐 Assign IAM roles and permissions.
+3. 🖥️ Set up a Transfer Family Server.
+4. 👥 Add users for access.
+
+---
+
+### 💻 Supported Clients
+
+Transfers can be performed using clients such as:
+
+- 🐧 OpenSSH
+- 📂 WinSCP
+- 🦆 Cyberduck
+- 📁 FileZilla
+
+Optional:
+
+- 📊 CloudWatch logging can be enabled for monitoring.
+
+---
+
+# 🛡️ AWS Snow Family & Storage Gateway Overview  
+
+## 🧩 Definition
+The **AWS Snow Family** consists of **physical hardware devices** designed to transfer large amounts of data **to and from AWS**, making them ideal when **network connectivity is slow, unreliable, or impractical**.
+
+**AWS Storage Gateway** acts as a **bridge between on-premises storage systems and AWS**, allowing organizations to seamlessly integrate local infrastructure with AWS storage services for backup, disaster recovery, and hybrid cloud storage.
+
+---
+
+## 🧠 Analogy: AWS Snow Family & Storage Gateway as a Moving Company and Storage Facility
+
+Imagine you're relocating an entire warehouse of valuable inventory to another city.
+
+- 🚚 The **AWS Snow Family** is like hiring specialized moving trucks of different sizes.
+  - 🚐 A **Snowcone** is like a small delivery van for lighter loads.
+  - 🚛 A **Snowball** is like a large moving truck for bigger shipments.
+  - 🚂 A **Snowmobile** is like an entire freight convoy capable of moving enormous amounts of cargo.
+
+- 🏗️ Some of these moving trucks even have **portable workstations**, allowing workers to process and organize inventory while traveling, similar to Snow devices that can run EC2 instances at the edge.
+
+- 🏢 **AWS Storage Gateway** is like having a local storage warehouse connected directly to your new warehouse in another city.
+  - 📁 You can quickly access frequently used items locally.
+  - ☁️ Everything is safely synchronized and stored in the remote warehouse.
+  - 📼 Older inventory can even be archived in long-term storage instead of occupying valuable local space.
+
+This allows organizations to efficiently move, store, and access data regardless of network limitations.
+
+---
+
+# 🚚 AWS Snow Family
+
+## 🧩 Purpose
+
+The **AWS Snow Family** is designed for transferring **large volumes of data** between on-premises environments and AWS when traditional network transfers are impractical.
+
+---
+
+## 📦 Snow Family Devices
+
+### 🚐 AWS Snowcone
+
+- 📏 Smallest device in the Snow Family.
+- 📦 Designed for smaller-scale data transfers.
+
+---
+
+### 🚛 AWS Snowball
+
+- 📈 Larger device for transferring greater amounts of data.
+- 🚚 Suitable for large-scale migration projects.
+
+---
+
+### 🚂 AWS Snowmobile
+
+- 📦 Largest member of the Snow Family.
+- 💾 Capable of transferring **up to 100 petabytes** of data.
+
+---
+
+## ⚙️ Compute Capabilities
+
+Some Snow Family devices include built-in compute capabilities.
+
+### Key Features
+
+- 🖥️ Can run **Amazon EC2 instances**.
+- 🌐 Allows data processing at the edge.
+- 📡 Useful in remote locations without persistent network connectivity.
+
+---
+
+# 🗄️ AWS Storage Gateway
+
+## 🧩 Purpose
+
+**AWS Storage Gateway** provides a bridge between **on-premises storage systems** and **AWS storage services**.
+
+It helps organizations integrate local infrastructure with AWS for:
+
+- 💾 Data backup.
+- 🛡️ Disaster recovery.
+- ☁️ Hybrid cloud storage.
+
+---
+
+## 📂 File Gateway
+
+The **File Gateway** stores files as **objects in Amazon S3**.
+
+### Key Features
+
+- 📁 Securely stores files in Amazon S3.
+- ⚡ Uses local caching to:
+  - Reduce latency.
+  - Improve performance.
+  - Reduce storage costs.
+
+---
+
+## 💽 Volume Gateway
+
+The **Volume Gateway** provides block storage and supports two configurations.
+
+### 🗃️ Stored Volume Gateway
+
+- 💾 Keeps primary data stored locally.
+- ⚡ Provides low-latency access.
+- ☁️ Copies data to AWS for backup.
+
+![alt text](SVG.png)
+
+---
+
+### ☁️ Cached Volume Gateway
+
+- 🪣 Uses **Amazon S3** as the primary storage location.
+- ⚡ Stores frequently accessed data locally using a cache.
+- 💰 Reduces on-premises storage requirements.
+
+![alt text](cvg.png)
+
+---
+
+## 📼 Tape Gateway (Gateway VTL)
+
+The **Tape Gateway**, also known as **Gateway VTL (Virtual Tape Library)**, provides a virtual replacement for traditional tape backup systems.
+
+### Key Features
+
+- 💾 Backs up data to Amazon S3.
+- 🧊 Archives data in Amazon Glacier.
+- 📼 Replaces physical tape components with virtual tapes.
+- 🔒 Improves security and durability compared to physical tape storage.
+
+---
+
+## ⚖️ Key Benefits
+
+- 🚚 Transfers large amounts of data when network connectivity is limited.
+- 📦 Offers multiple Snow Family devices for different migration sizes.
+- 🖥️ Some Snow devices provide edge computing with Amazon EC2.
+- ☁️ AWS Storage Gateway integrates on-premises storage with AWS.
+- 📁 File Gateway stores files as Amazon S3 objects with local caching.
+- 💽 Volume Gateway supports both local-first and cloud-first storage models.
+- 📼 Tape Gateway modernizes tape backups using Amazon S3 and Amazon Glacier.
