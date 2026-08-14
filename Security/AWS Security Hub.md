@@ -399,3 +399,249 @@ AWS provides tools that help automate:
 Many of these tools utilize **Machine Learning (ML)** to help ensure cloud security compliance with best practices.
 
 ---
+
+# 🛡️ Amazon Inspector Overview
+
+## 🧩 Definition
+**Amazon Inspector** is a **security assessment service** designed to help analyze **EC2 instances** for potential **security issues**.
+
+It focuses on protecting the security of **EC2 instances** by identifying:
+- 🔍 Potential **security vulnerabilities**
+- 🌐 **Unintended network exposures**
+
+---
+
+## 📚 Knowledge Base and Security Rules
+Amazon Inspector includes a **comprehensive knowledge base** containing **hundreds of rules**.
+
+These rules are aligned with:
+- 🛡️ Common **security compliance standards**
+- 🔓 **Vulnerability definitions**
+
+The knowledge base is **regularly updated by AWS security experts** to help keep security assessments current.
+
+---
+
+## 🖥️ EC2 Instance Monitoring
+Amazon Inspector allows users to install an **agent on the operating system** of an **EC2 instance**.
+
+The agent monitors:
+- 🌐 **Network activity**
+- 📁 **File system activity**
+- ⚙️ **Process activity**
+
+This monitoring helps Amazon Inspector analyze the EC2 instance for potential security issues.
+
+---
+
+## 🤖 Automated Vulnerability Assessments
+Amazon Inspector **automates vulnerability assessments**.
+
+This helps make **security testing a regular part of cloud operations** rather than requiring security assessments to be performed manually.
+
+---
+
+## 🚨 Prioritized Findings
+Amazon Inspector provides a **prioritized list of findings**.
+
+This helps users:
+- 🔍 Identify **security vulnerabilities**
+- 🎯 Determine which issues to address
+- 🛠️ Address security vulnerabilities more effectively
+
+---
+
+## 🔐 Security Focus
+Amazon Inspector is focused on protecting **EC2 instances** by identifying:
+
+- 🔓 **Potential vulnerabilities**
+- 🌐 **Unintended network exposures**
+- ⚠️ Other potential **security issues**
+
+---
+
+## ⚖️ Key Benefits
+- 🛡️ Helps analyze **EC2 instances** for potential security issues.
+- 📚 Provides a comprehensive knowledge base with **hundreds of security rules**.
+- 🔄 Uses rules that are **regularly updated by AWS security experts**.
+- 🖥️ Monitors **network, file system, and process activity** through an agent installed on the EC2 operating system.
+- 🤖 **Automates vulnerability assessments** to make security testing a regular part of cloud operations.
+- 🚨 Provides a **prioritized list of findings** to help identify and address vulnerabilities.
+- 🌐 Helps identify **unintended network exposures** affecting EC2 instances.
+
+---
+
+## 🧠 Analogy: Amazon Inspector as a Security Guard
+
+Imagine **Amazon Inspector** as a **security guard for your building (your EC2 instances)**.
+
+- 🛡️ The guard uses a **detailed checklist (a knowledge base with hundreds of rules)** that is always kept up to date by **security experts**.
+- 🚶 The guard regularly walks through the building, checking **doors, windows, and equipment (monitoring network, file system, and process activity)** to spot anything unusual or risky.
+- 🤖 You can set the guard to perform these checks **automatically**, so you don’t have to remind them each time (**automated vulnerability assessments**).
+- 🚨 After each round, the guard gives you a **prioritized list of issues found**, so you know exactly what needs your attention first.
+- 🔐 This helps keep your building secure while allowing you to **focus on other tasks**.
+
+---
+
+# 🛡️ Amazon GuardDuty Overview
+
+## 🧩 Definition
+**Amazon GuardDuty** is a **threat detection service** designed to monitor and protect **AWS accounts and workloads** from **suspicious activities**.
+
+---
+
+## 🤖 Machine Learning and Behavior Analysis
+Amazon GuardDuty uses **machine learning models** to identify **unusual user and resource behaviors**.
+
+- 🧠 Analyzes behaviors within the environment.
+- 🔄 Adapts to the environment to help **reduce false positives**.
+- 🚨 Helps identify potentially suspicious activities.
+
+---
+
+## 📊 Log Analysis
+Amazon GuardDuty analyzes several types of logs to detect potential issues, including:
+
+- 📜 **CloudTrail logs**
+- 🌐 **VPC flow logs**
+- 🔎 **DNS query logs**
+
+These logs are analyzed to help detect **potential security issues**.
+
+---
+
+## 🧪 Sample Findings
+**Sample findings** can be generated to help users understand the types of results that **Amazon GuardDuty** provides.
+
+- 🧪 Allows users to generate example findings.
+- 📊 Helps users understand the types of results GuardDuty can provide.
+- 🔍 Can be used to verify how findings are presented.
+
+---
+
+## 🔗 AWS Security Hub Integration
+Amazon GuardDuty integrates with **AWS Security Hub**.
+
+- 🔗 GuardDuty findings can be used with **AWS Security Hub**.
+- 🧪 Users can use **sample findings** to verify the functionality of the integration.
+
+---
+
+## 🚨 Finding Severity Levels
+Amazon GuardDuty categorizes findings based on their **severity**.
+
+| Severity | Indicator |
+|---|---|
+| 🔵 **Low** | Blue circle |
+| 🟠 **Medium** | Orange square |
+| 🔴 **High** | Red triangle |
+
+A **summary of each severity category** is displayed in the **AWS console**.
+
+---
+
+## ⚖️ Key Benefits
+- 🛡️ Helps monitor and protect **AWS accounts and workloads** from suspicious activities.
+- 🤖 Uses **machine learning models** to identify unusual user and resource behaviors.
+- 🔄 Adapts to the environment to help **reduce false positives**.
+- 📊 Analyzes **CloudTrail logs, VPC flow logs, and DNS query logs**.
+- 🧪 Provides **sample findings** to help users understand GuardDuty results.
+- 🔗 Integrates with **AWS Security Hub**.
+- 🚨 Categorizes findings by **low, medium, and high severity**.
+
+---
+
+## 🧠 Analogy: Amazon GuardDuty as a Security Dog
+
+Imagine **Amazon GuardDuty** as a **highly trained security dog in a large office building**.
+
+- 🐕 The dog constantly patrols the halls (**your AWS accounts and workloads**), using its sharp senses (**machine learning models**) to sniff out anything unusual or suspicious—like someone sneaking in or acting strangely (**suspicious user or resource behaviors**).
+- 🔇 Instead of barking at every little noise (**false positives**), this dog learns what’s normal in your building, so it only alerts you when something truly odd happens.
+- 📹 It checks security cameras and logs (**CloudTrail, VPC flow, DNS logs**) to spot issues.
+- 🚨 When it finds something, it classifies the alert as **low, medium, or high severity**—like a minor disturbance, a suspicious visitor, or a break-in.
+- 🧪 You can also ask the dog to show you **examples of what it might find**, helping you understand what to look out for.
+
+---
+
+# 🛡️ Amazon Macie Overview
+
+## 🧩 Definition
+**Amazon Macie** utilizes **machine learning** to identify and analyze **sensitive data** in **Amazon S3 buckets**.
+
+It can identify sensitive information such as **Personally Identifiable Information (PII)**, including:
+- 👤 **Names**
+- 🏠 **Addresses**
+- 💳 **Credit card numbers**
+
+---
+
+## 🔍 Sensitive Data Discovery
+Amazon Macie **scans S3 buckets** to detect **critical private information**.
+
+- 🧠 Uses **machine learning** to identify sensitive data.
+- 🪣 Scans **Amazon S3 buckets** for critical private information.
+- 🔄 Tracks changes to objects within S3.
+- ⚡ In future scans, Macie evaluates only **new or modified objects** for greater efficiency.
+
+---
+
+## ⚙️ Data Discovery Options
+Users can perform **data discovery** in two ways:
+
+- 1️⃣ **One-time data discovery**
+- 🤖 **Automated data discovery**
+
+The results of data discovery are displayed in **AWS Security Hub**.
+
+---
+
+## 🚨 Findings and Severity
+Amazon Macie provides a **list of findings** that includes:
+
+- 🚨 **Severity levels**
+- 🏷️ **Finding types**
+- 🪣 **Affected resources**
+- 📅 **Last scan date**
+
+Finding types can include:
+- 👤 **Personal**
+- 💳 **Financial**
+- 🔑 **Credentials**
+
+---
+
+## ⚡ Efficient Object Scanning
+Amazon Macie does not re-evaluate objects unless **changes occur**.
+
+- 🆕 **New objects** are evaluated.
+- ✏️ **Modified objects** are evaluated.
+- 💤 Objects that have **not changed** are not re-evaluated.
+- 📈 This enhances **scalability and efficiency**.
+
+---
+
+## ⚖️ Key Benefits
+- 🧠 Uses **machine learning** to identify and analyze sensitive data.
+- 🪣 Scans **Amazon S3 buckets** for critical private information.
+- 🔍 Identifies sensitive information such as **PII**.
+- 🔄 Evaluates only **new or modified objects** in future scans.
+- 🤖 Supports both **one-time and automated data discovery**.
+- 🚨 Provides findings with **severity levels and types**.
+- 📊 Identifies **affected resources** and the **last scan date**.
+- ⚡ Avoids re-evaluating unchanged objects, improving **scalability and efficiency**.
+
+---
+
+## 🧠 Analogy: Amazon Macie as a Security Guard in a Library
+
+Imagine **Amazon Macie** as a **highly intelligent security guard for a large library (your Amazon S3 storage)**.
+
+- 🛡️ This guard doesn’t just watch the doors; it walks through every aisle, checking each **book (file)** for sensitive information like:
+  - 💳 Secret codes (**credit card numbers**)
+  - 💌 Personal letters (**PII**)
+  - 🔐 Confidential documents (**API keys**)
+- 🆕 Whenever a **new book is added** or an **old one is changed**, the guard inspects it.
+- 💤 The guard ignores books that **haven’t changed**, saving time and effort.
+- 🚨 If the guard finds something sensitive, it marks it with a **colored sticker (severity level)** and writes a report about **what was found and where**.
+- 📋 The report helps you understand the sensitive information discovered and the resources affected.
+- 🔐 This way, you always know if your library is safe or if there are **risks you need to address**.
