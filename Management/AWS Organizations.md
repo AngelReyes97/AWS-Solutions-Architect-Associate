@@ -218,3 +218,111 @@ The process involves:
 **OUs = Organize AWS accounts**
 
 **Invitations = Add existing AWS accounts to the organization**
+
+---
+
+# 🛡️ Securing Your Organizations with Service Control Policies
+
+## 🧩 Definition
+
+**Service Control Policies (SCPs)** are used within **AWS Organizations** to set **boundaries for permissions** within AWS accounts.
+
+- 🛡️ SCPs restrict what actions can be performed within accounts.
+- 🚫 SCPs **do not grant permissions themselves**.
+- 🔐 They can restrict access to specific AWS services.
+
+---
+
+## ⚙️ SCP Requirements
+
+To use **SCPs**:
+
+- 🏢 AWS Organizations must be configured with **Enable All Features**.
+- 🛡️ SCPs must be **enabled from the root account**.
+
+---
+
+## 🔐 SCPs and Permissions
+
+SCPs act as permission boundaries by restricting access to AWS services.
+
+For example:
+
+- 👤 An IAM policy may allow a user to access **Amazon S3**.
+- 🚫 An SCP can deny access to **Amazon S3**.
+- 🛡️ The SCP restriction limits what the account can access despite the existing IAM permissions.
+
+### 🎯 Example
+
+**IAM Permissions → Allow S3**
+
+**SCP → Deny S3**
+
+**Result → S3 access is restricted**
+
+---
+
+## 🌳 Parent-Child Relationship
+
+SCPs follow a **parent-child relationship** within an AWS Organization.
+
+Their effect depends on their **hierarchical placement** within the organization.
+
+This allows SCPs to manage permissions across multiple levels of the organization.
+
+![alt text](SCP.png)
+
+---
+
+## 🚫 SCP Limitations
+
+SCPs do **not** impact:
+
+- 📜 **Resource-based policies**
+- 🔗 **Service-linked roles**
+- 👑 **Actions performed by the master account**
+
+---
+
+## 🔄 Disabling and Re-enabling SCPs
+
+When SCPs are **disabled**:
+
+- 🗑️ Existing SCPs are **deleted**.
+
+When SCPs are **re-enabled**:
+
+- 🔄 The organization reverts to a **default policy allowing full access**.
+
+---
+
+## 🛠️ SCP Example
+
+An SCP can be created and attached to restrict access to **Amazon S3**.
+
+### 🎯 Basic Flow
+
+**Create SCP → Deny Amazon S3 → Attach SCP → S3 Access Restricted**
+
+The SCP can override existing IAM permissions by restricting access to the service.
+
+---
+
+## ⚖️ Key Benefits
+
+- 🛡️ Sets **permission boundaries** across AWS accounts.
+- 🚫 Restricts access to specific AWS services.
+- 🏢 Helps manage access across **multiple AWS accounts**.
+- 🌳 Supports hierarchical permission management through the **parent-child relationship**.
+- 🔐 Provides centralized control over account permissions.
+- 📋 Works alongside existing IAM permissions by restricting what accounts can access.
+
+### 🧠 Key Idea
+
+**SCPs = Permission Boundaries**
+
+**SCPs do not grant permissions → They restrict permissions**
+
+**Enable All Features = Required for SCPs**
+
+**SCP attached to account/OU → Restricts available AWS services and actions**
